@@ -57,10 +57,10 @@ RM 			= rm -rf
 
 CFLAGS 		= -Wall -Wextra -Werror
 
-%.o : %.c	$(HEADER)
+%.o : %.c	$(HEADER) 
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-$(NAME): 	$(OBJS)
+$(NAME): 	$(OBJS) $(HEADER)
 			ar rc $(NAME) $(OBJS)
 
 all:		$(NAME)
