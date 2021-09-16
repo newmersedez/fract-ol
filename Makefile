@@ -6,7 +6,7 @@
 #    By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 16:52:01 by lorphan           #+#    #+#              #
-#    Updated: 2021/09/16 18:23:49 by lorphan          ###   ########.fr        #
+#    Updated: 2021/09/16 18:25:58 by lorphan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME):			$(INCLUDES_DIR) $(OBJECTS)
 clean:
 					$(RM) $(OBJECTS)
 					make clean -C $(LIBFT_DIR)
-						
+
 fclean:				clean
 					$(RM) $(NAME)
 					make fclean -C $(LIBFT_DIR)
