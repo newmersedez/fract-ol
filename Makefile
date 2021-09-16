@@ -6,7 +6,7 @@
 #    By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 16:52:01 by lorphan           #+#    #+#              #
-#    Updated: 2021/09/16 20:01:30 by lorphan          ###   ########.fr        #
+#    Updated: 2021/09/16 20:06:26 by lorphan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ $(OBJECTS_DIR)%.o: %.c $(INCLUDES)
 all:				$(NAME)
 
 $(NAME):			$(INCLUDES_DIR) $(LIBFT_DIR)/libft.h $(OBJECTS)
+					make -C $(LIBFT_DIR)
 					$(CC) $(CFLAGS) $(OBJECTS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:

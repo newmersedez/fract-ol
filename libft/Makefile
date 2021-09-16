@@ -35,7 +35,7 @@ SRCS 		= ft_memset.c\
 	ft_putnbr_fd.c\
 	ft_strmapi.c\
 	ft_strtrim.c\
-	ft_split.c\
+	ft_split.c
 
 BONUS_SRCS	= ft_lstnew.c\
 	ft_lstadd_front.c\
@@ -73,7 +73,7 @@ fclean:		clean
 
 re:			fclean all
 
-bonus:		$(OBJS) $(BONUS_OBJS)
+bonus:		$(OBJS) $(BONUS_OBJS) $(HEADER)
 			ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:		all clean fclean re bonus
