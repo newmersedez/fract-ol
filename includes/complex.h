@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_math.h                                          :+:      :+:    :+:   */
+/*   complex.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:29:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 18:47:07 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/21 20:48:14 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_MATH_H
-# define MY_MATH_H
+#ifndef COMPLEX_H
+# define COMPLEX_H
 
 # include "fractol.h"
 
-typedef struct s_complex_number
+typedef struct s_complex
 {
-	int	re;
-	int im;
-}	t_complex_number;
+	double	re;
+	double	im;
+}	t_complex;
 
-t_complex_number	sum(t_complex_number a, t_complex_number b);
-t_complex_number	multiply(t_complex_number a, t_complex_number b);
-void				mandelbrot(t_win *vars);
+t_complex	init_complex(double re, double im);
+t_complex	sum_complex(t_complex a, t_complex b);
+t_complex	multiply_complex(t_complex a, t_complex b);
 
 #endif

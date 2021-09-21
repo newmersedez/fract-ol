@@ -6,24 +6,33 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:21:29 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 18:53:50 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/21 20:48:02 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-static t_complex_number	create_complex_number(void)
+static t_complex	create_complex_number(void)
 {
-	t_complex_number	num;
+	t_complex	num;
 
 	num.re = 0;
 	num.im = 0;
 	return (num);
 }
 
-t_complex_number	sum(t_complex_number a, t_complex_number b)
+t_complex	init_complex(double re, double im)
 {
-	t_complex_number	result;
+	t_complex	result;
+
+	result.re = re;
+	result.im = im;
+	return (result);
+}
+
+t_complex	sum_complex(t_complex a, t_complex b)
+{
+	t_complex	result;
 
 	result = create_complex_number();
 	result.re = a.re + b.re;
@@ -31,9 +40,9 @@ t_complex_number	sum(t_complex_number a, t_complex_number b)
 	return (result);
 }
 
-t_complex_number	multiply(t_complex_number a, t_complex_number b)
+t_complex	multiply_complex(t_complex a, t_complex b)
 {
-	t_complex_number	result;
+	t_complex	result;
 
 	result = create_complex_number();
 	result.re = a.re * b.re - a.im * b.im;

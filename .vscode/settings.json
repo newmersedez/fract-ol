@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"fractol.h": "c",
+		"chrono": "c",
+		"ratio": "c"
+	}
+}
