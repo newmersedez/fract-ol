@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 17:15:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 18:51:21 by lorphan          ###   ########.fr       */
+/*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
+/*   Updated: 2021/09/21 18:51:36 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef UTILS_H
+# define UTILS_H
 
-# include <mlx.h>
-# include <math.h>
-# include <stdlib.h>
-# include "utils.h"
-# include "my_math.h"
-# include "defines.h"
+# include "fractol.h"
+
+typedef struct s_image
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_image;
+
+typedef struct s_win
+{
+	void	*mlx;
+	void	*win;
+	t_image	img;
+}	t_win;
+
+int		red_cross_pressed(t_win *vars);
+int		esc_button_pressed(int keycode, t_win *vars);
+void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
 
 #endif

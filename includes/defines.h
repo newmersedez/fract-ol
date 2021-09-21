@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 17:15:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 18:51:21 by lorphan          ###   ########.fr       */
+/*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
+/*   Updated: 2021/09/21 18:51:28 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "fractol.h"
 
-# include <mlx.h>
-# include <math.h>
-# include <stdlib.h>
-# include "utils.h"
-# include "my_math.h"
-# include "defines.h"
+# define WIN_WIDTH 1920
+# define WIN_HEIGHT 1080
 
-#endif
+# define KEY_ESC 53
