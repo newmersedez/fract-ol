@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 21:38:14 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/21 21:39:54 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@
 
 /* Colors */
 
-# define WHITE 			0xFFFFFF
-# define BLACK 			0x000000
-# define RED 			0xFF0000
-# define GREEN 			0x00FF00
-# define BLUE 			0x0000FF
+# define WHITE 	0xFFFFFF
+# define BLACK 	0x000000
+# define RED 	0xFF0000
+# define GREEN 	0x00FF00
+# define BLUE 	0x0000FF
 
 #endif
