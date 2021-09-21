@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 15:37:56 by lorphan           #+#    #+#             */
+/*   Updated: 2021/09/21 15:40:22 by lorphan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	get_size(char const *s, char c)
@@ -86,8 +98,8 @@ char	**ft_split(char const *s, char c)
 			}
 			count++;
 		}
-		else
-			s++;
+		s++;
 	}
+	array_of_words[count] = NULL;
 	return (array_of_words);
 }

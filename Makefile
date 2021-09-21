@@ -6,7 +6,7 @@
 #    By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 16:52:01 by lorphan           #+#    #+#              #
-#    Updated: 2021/09/16 20:06:26 by lorphan          ###   ########.fr        #
+#    Updated: 2021/09/21 15:43:01 by lorphan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS			= -Wall -Wextra -Werror
 RM				= rm -rf
 
 INCLUDES_DIR	= ./includes/
-SOURCES_DIR		= ./sources/
+SOURCES_DIR		= ./sources/ ./sources/utils/
 OBJECTS_DIR		= ./objects/
 LIBFT_DIR		= ./libft/
 
