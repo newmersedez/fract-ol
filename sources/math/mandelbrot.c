@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 21:19:59 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/21 21:37:18 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	draw_mandelbrot(t_win *vars)
 	min.re = -2.0;
 	max.re = 2.0;
 	min.im = -2.0;
-	max.im = min.im + (max.re - min.re) * WIN_HEIGHT / WIN_WIDTH;
+	max.im = min.im + (max.re - min.re) * WIN_HEIGHT / (WIN_WIDTH);
 	factor.re = (max.re - min.re) / (WIN_WIDTH - 1);
 	factor.im = (max.im - min.im) / (WIN_HEIGHT - 1);
 	max_iteration = ITERATIONS;
@@ -60,16 +60,14 @@ void	draw_mandelbrot(t_win *vars)
 			while (pow(z.re, 2.0) + pow(z.im, 2.0) <= 4
 				&& iteration < max_iteration)
 			{
-				z = init_complex(
-                pow(z.re, 2.0) - pow(z.im, 2.0) + c.re,
-                2.0 * z.re * z.im + c.im);
+				z = init_complex(pow(z.re, 2.0) - pow(z.im, 2.0) + c.re, 2.0 * z.re * z.im + c.im);
 				iteration++;
 			}
         	color = get_color(iteration, max_iteration);
-			my_mlx_pixel_put(&vars->img, x, y, color);
+			my_mlx_pixel_put(&vars->img, x, y, get_color(iteration, max_iteration));
 			x++;
 		}
 		y++;
 	}
-	(void)vars;
+	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 }

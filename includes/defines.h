@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 21:17:52 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/21 21:38:14 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 /* Window settings */
 
-# define WIN_WIDTH	1920
-# define WIN_HEIGHT 1080
+# define WIN_WIDTH	1200
+# define WIN_HEIGHT 1200
+
 # define ITERATIONS 50
 
 /* Keycodes */
