@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 21:39:54 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/22 16:09:55 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define WIN_WIDTH	1200
 # define WIN_HEIGHT 1200
 
-# define ITERATIONS 50
+# define ITERATIONS 100
 
 /* Keycodes */
 
@@ -33,5 +33,6 @@
 # define RED 	0xFF0000
 # define GREEN 	0x00FF00
 # define BLUE 	0x0000FF
+
 
 #endif

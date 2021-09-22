@@ -6,27 +6,12 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 21:37:18 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/22 16:04:13 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 #include <stdio.h>
-
-static unsigned int	get_color(int iteration, int max_iteration)
-{
-	double	t;
-	int	red;
-	int	green;
-	int	blue;
-
-	t = (double)iteration / (double)max_iteration;
-
-	red = (int)(9 * (1 - t) * pow(t, 3) * 255);
-	green = (int)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
-	blue = (int)(8.5 * pow((1 - t), 3) * t * 255);
-	return ((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF);
-}
 
 void	draw_mandelbrot(t_win *vars)
 {
@@ -69,5 +54,5 @@ void	draw_mandelbrot(t_win *vars)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
+	// mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 }
