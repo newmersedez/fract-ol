@@ -6,13 +6,13 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:17:50 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/22 16:08:19 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/22 17:04:18 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-void	draw_julia(t_win *vars)
+void	draw_julia(t_fractal *vars)
 {
 	// unsigned int	color;
 	// t_complex		min;

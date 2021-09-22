@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:39:08 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/21 15:39:09 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/22 17:49:36 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *str);
+int		ft_strcmp(char *s1, char *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 

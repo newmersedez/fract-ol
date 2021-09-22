@@ -6,14 +6,14 @@
 #    By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 16:52:01 by lorphan           #+#    #+#              #
-#    Updated: 2021/09/21 18:33:41 by lorphan          ###   ########.fr        #
+#    Updated: 2021/09/22 20:54:36 by lorphan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= fractol
 
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
 RM				= rm -rf
 
 INCLUDES_DIR	= ./includes/

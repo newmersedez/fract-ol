@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 17:15:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/22 17:58:52 by lorphan          ###   ########.fr       */
+/*   Created: 2021/09/22 17:42:52 by lorphan           #+#    #+#             */
+/*   Updated: 2021/09/22 17:59:43 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "libft.h"
 
-# include <mlx.h>
-# include <math.h>
-# include <stdlib.h>
-# include "defines.h"
-# include "../libft/libft.h"
-# include "complex.h"
-# include "utils.h"
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (s1[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}
