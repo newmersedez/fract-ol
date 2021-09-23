@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:15:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/22 17:58:52 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/23 20:27:09 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@
 # include "../libft/libft.h"
 # include "complex.h"
 # include "utils.h"
-
 #endif
