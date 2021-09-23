@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:17:22 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/23 21:20:31 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/23 22:13:35 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	set_defaults(t_fractal *fractal)
 		* WIN_HEIGHT / WIN_WIDTH;
 	fractal->factor.re = (fractal->max.re - fractal->min.re)
 		/ (WIN_WIDTH - 1);
-	fractal->factor.im =(fractal->max.im - fractal->min.im)
+	fractal->factor.im = (fractal->max.im - fractal->min.im)
 		/ (WIN_HEIGHT - 1);
 	fractal->max_iteration = ITERATIONS;
 }
