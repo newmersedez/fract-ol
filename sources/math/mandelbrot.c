@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/24 21:39:47 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/24 22:02:15 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,25 +52,25 @@ static void	draw_mandelbrot_part(t_fractal *fractal)
 	}
 }
 
-void draw_mandelbrot(t_fractal *fractal)
+void	draw_mandelbrot(t_fractal *fractal)
 {
 	int			i;
 	pthread_t	threads[THREADS];
 	t_fractal	fractals[THREADS];
 
 	fractal->factor = init_complex(
-		(fractal->max.re - fractal->min.re) / (WIN_WIDTH - 1),
-		(fractal->max.im - fractal->min.im) / (WIN_HEIGHT - 1));
+			(fractal->max.re - fractal->min.re) / (WIN_WIDTH - 1),
+			(fractal->max.im - fractal->min.im) / (WIN_HEIGHT - 1));
 	i = 0;
 	while (i < THREADS)
 	{
 		fractals[i] = *fractal;
 		fractals[i].min_pthread_bound = i * (WIN_HEIGHT / THREADS);
 		fractals[i].max_pthread_bound = (i + 1) * (WIN_HEIGHT / THREADS);
-		pthread_create(&threads[i], NULL, (void *(*)(void *))draw_mandelbrot_part, (void *)&fractals[i]);
+		pthread_create(&threads[i], NULL,
+			(void *(*)(void *))draw_mandelbrot_part, (void *)&fractals[i]);
 		i++;
 	}
 	while (i-- > 0)
 		pthread_join(threads[i], NULL);
-	mlx_put_image_to_window(fractal->window.mlx, fractal->window.win, fractal->image.img, 0, 0);
 }
