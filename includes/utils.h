@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/23 21:42:02 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/24 15:50:51 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,22 @@ void		set_defaults(t_fractal *fractal);
 /* Hook utils */
 
 int			close_hook(t_fractal *vars);
-int			escape_hook(int keycode, t_fractal *vars);
-int			mouse_hook(int keycode, int x, int y, t_fractal *fractal);
 int			expose_hook(t_fractal *fractal);
+int			keyboard_hook(int keycode, t_fractal *vars);
+int			mouse_hook(int keycode, int x, int y, t_fractal *fractal);
 
-/* Draw usils */
+/* Control utils */
+
+void		mouse_zoom_in(t_fractal *fractal, int x, int y);
+void		mouse_zoom_out(t_fractal *fractal, int x, int y);
+void		keyboard_move_up(t_fractal *fractal);
+void		keyboard_move_down(t_fractal *fractal);
+void		keyboard_move_left(t_fractal *fractal);
+void		keyboard_move_right(t_fractal *fractal);
+void		keyboard_less_iterations(t_fractal *fractal);
+void		keyboard_more_iterations(t_fractal *fractal);
+
+/* Draw utils */
 
 void		my_mlx_pixel_put(t_image *data, int x, int y, int color);
 
@@ -71,7 +82,7 @@ int			get_color(int iteration, int max_iteration);
 
 /* Fractal Drawing functions */
 
-void		draw_mandelbrot(t_fractal *vars);
+void		iterate_mandelbrot(t_fractal *vars);
 void		draw_julia(t_fractal *vars);
 
 #endif

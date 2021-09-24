@@ -6,14 +6,13 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/23 22:15:39 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/24 15:56:10 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
-#include <stdio.h>
 
-void	draw_mandelbrot(t_fractal *fractal)
+void	iterate_mandelbrot(t_fractal *fractal)
 {
 	t_complex	z;
 	int			x;
