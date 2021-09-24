@@ -6,11 +6,12 @@
 #    By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 16:52:01 by lorphan           #+#    #+#              #
-#    Updated: 2021/09/23 20:20:51 by lorphan          ###   ########.fr        #
+#    Updated: 2021/09/24 17:55:21 by lorphan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= fractol
+LIBFT			= ./libft/libft.h
 
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
@@ -33,9 +34,9 @@ $(OBJECTS_DIR)%.o: %.c $(INCLUDES)
 
 all:				$(NAME)
 
-$(NAME):			$(INCLUDES_DIR) $(LIBFT_DIR)/libft.h $(OBJECTS)
+$(NAME):			$(INCLUDES) $(LIBFT) $(OBJECTS)
 					make -C $(LIBFT_DIR)
-					$(CC) $(CFLAGS) $(OBJECTS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+					$(CC) $(CFLAGS) $(OBJECTS) ./libft/libft.a -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 					$(RM) $(OBJECTS)

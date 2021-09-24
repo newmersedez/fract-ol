@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/24 16:09:25 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/24 21:26:44 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,29 @@
 
 /* Window settings */
 
-# define THREADS			10
-# define ITERATIONS_START 	20
-# define ITERATIONS_CHANGE	5
-# define ITERATIONS_MIN		5		
-# define ITERATIONS_MAX		100
 # define WIN_WIDTH			1000
 # define WIN_HEIGHT 		1000
 # define WIN_NAME			"fract-ol"
+# define THREADS			100
+# define ITERATIONS_START	20
+# define ITERATIONS_CHANGE	5
+# define ITERATIONS_MIN		5
+# define ITERATIONS_MAX		50
 
-/* Keycodes */
+/* Colors */
+
+# define WHITE				0xFFFFFF
+# define MARINE				0x0FFFF0
+
+/* Mouse codes */
 
 # define MOUSE_LEFT_BUTTON	1
 # define MOUSE_RIGHT_BUTTON	2
 # define MOUSE_WHEEL_DOWN	2
 # define MOUSE_SCROLL_UP 	4
 # define MOUSE_SCROLL_DOWN 	5
+
+/* Keyboard codes */
 
 # define KEY_A				0
 # define KEY_S				1

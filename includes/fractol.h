@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:15:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/23 20:27:09 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/24 18:04:07 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <mlx.h>
 # include <math.h>
 # include <stdlib.h>
+# include <pthread.h>
 # include "defines.h"
 # include "../libft/libft.h"
 # include "complex.h"

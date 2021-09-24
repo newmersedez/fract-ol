@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/24 15:50:51 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/24 19:52:34 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ typedef struct s_window
 {
 	void		*mlx;
 	void		*win;
-	int			height;
-	int			width;
 }	t_window;
 
 typedef struct s_image
@@ -42,6 +40,8 @@ typedef struct s_fractal
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
+	int			min_pthread_bound;
+	int			max_pthread_bound;
 	int			max_iteration;
 }	t_fractal;
 
@@ -82,7 +82,7 @@ int			get_color(int iteration, int max_iteration);
 
 /* Fractal Drawing functions */
 
-void		iterate_mandelbrot(t_fractal *vars);
+void		draw_mandelbrot(t_fractal *vars);
 void		draw_julia(t_fractal *vars);
 
 #endif
