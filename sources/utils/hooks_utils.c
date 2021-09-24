@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:21:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/24 21:15:35 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/24 21:36:41 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	expose_hook(t_fractal *fractal)
 {
 	fractal->image = create_image(fractal->window);
 	draw_mandelbrot(fractal);
-	mlx_put_image_to_window(fractal->window.mlx, fractal->window.win, fractal->image.img, 0, 0);
+	// mlx_put_image_to_window(fractal->window.mlx, fractal->window.win, fractal->image.img, 0, 0);
 	return (0);
 }
 
