@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:13:48 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/24 22:24:15 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/25 15:37:10 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ int	main(void)
 	mlx_key_hook(fractal.window.win, keyboard_hook, &fractal);
 	mlx_hook(fractal.window.win, 17, 0, close_hook, &fractal);
 	mlx_loop(fractal.window.mlx);
+	return (0);
 }

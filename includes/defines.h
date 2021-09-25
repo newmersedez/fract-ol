@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/25 14:42:14 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/25 15:38:38 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define ITERATIONS_START	25
 # define ITERATIONS_CHANGE	5
 # define ITERATIONS_MIN		10
-# define ITERATIONS_MAX		100
+# define ITERATIONS_MAX		50
 
 /* Colors */
 
