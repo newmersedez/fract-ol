@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/25 16:56:42 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/25 17:10:40 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct s_fractal
 	t_image		image;
 	t_window	window;
 	t_complex	c;
-	t_complex	z;
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
