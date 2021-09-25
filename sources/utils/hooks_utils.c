@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:21:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/24 22:03:27 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/25 14:41:49 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ int	expose_hook(t_fractal *fractal)
 	fractal->image = create_image(fractal->window);
 	draw_mandelbrot(fractal);
 	mlx_put_image_to_window(fractal->window.mlx, fractal->window.win, fractal->image.img, 0, 0);
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 10, WHITE, "    Mandelbrot set    ");
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 40, WHITE, "Controls - WASD/arrows");
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 70, WHITE, "Zoom in - scroll up");
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 90, WHITE, "(mouse left buton)");
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 120, WHITE, "Zoom out - scroll down");
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 140, WHITE, "(mouse right buton)");
 	return (0);
 }
 

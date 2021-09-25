@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:17:22 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/24 22:19:35 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/25 14:13:27 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ t_image	create_image(t_window window)
 
 void	set_defaults(t_fractal *fractal)
 {
-	fractal->min.re = -2.0;
-	fractal->min.im = -2.0;
-	fractal->max.re = 2.0;
+	fractal->min.re = -3.0;
+	fractal->min.im = -3.0;
+	fractal->max.re = 3.0;
 	fractal->max.im = fractal->min.im + (fractal->max.re - fractal->min.re)
 		* WIN_HEIGHT / WIN_WIDTH;
 	fractal->factor.re = (fractal->max.re - fractal->min.re)
