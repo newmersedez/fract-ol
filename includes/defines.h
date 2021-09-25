@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/25 15:38:38 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/25 16:29:36 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 /* Window settings */
 
-# define WIN_WIDTH			1000
-# define WIN_HEIGHT 		1000
+# define WIN_WIDTH			1300
+# define WIN_HEIGHT 		1300
 # define WIN_NAME			"fract-ol"
 # define THREADS			50
 # define ITERATIONS_START	25
@@ -30,6 +30,7 @@
 
 # define WHITE				0xFFFFFF
 # define MARINE				0x0FFFF0
+# define SALMON_PINK		0xFF9999
 
 /* Mouse codes */
 
