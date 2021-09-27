@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:58:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:55:07 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 21:29:55 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,32 @@
 
 void	keyboard_move_right(t_fractal *fractal)
 {
-	fractal->min.re += 0.1;
-	fractal->max.re += 0.1;
+	fractal->min.re += FPS * fractal->factor.re;
+	fractal->max.re += FPS * fractal->factor.re;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
 }
 
 void	keyboard_move_left(t_fractal *fractal)
 {
-	fractal->min.re -= 0.1;
-	fractal->max.re -= 0.1;
+	fractal->min.re -= FPS * fractal->factor.re;
+	fractal->max.re -= FPS * fractal->factor.re;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
 }
 
 void	keyboard_move_up(t_fractal *fractal)
 {
-	fractal->min.im += 0.1;
-	fractal->max.im += 0.1;
+	fractal->min.im += FPS * fractal->factor.re;
+	fractal->max.im += FPS * fractal->factor.re;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
 }
 
 void	keyboard_move_down(t_fractal *fractal)
 {
-	fractal->min.im -= 0.1;
-	fractal->max.im -= 0.1;
+	fractal->min.im -= FPS * fractal->factor.re;
+	fractal->max.im -= FPS * fractal->factor.re;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
 }

@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:50:20 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 21:03:48 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ typedef struct s_fractal
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
+	int			max_iteration;
 	int			min_pthread_bound;
 	int			max_pthread_bound;
-	int			max_iteration;
 }	t_fractal;
 
 /* Scene Utils */

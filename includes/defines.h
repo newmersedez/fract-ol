@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:52:31 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 21:31:50 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 
 # include "fractol.h"
 
-/* Window settings */
+/* Window defaults */
 
 # define WIN_WIDTH			1280
 # define WIN_HEIGHT 		1280
+# define FPS				60
 # define WIN_NAME			"fract-ol"
+
+/* Threads defaults */
 # define THREADS			8
 # define ITERATIONS_START	30
 # define ITERATIONS_CHANGE	5

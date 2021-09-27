@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:17:22 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:53:36 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 21:38:40 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ void	set_defaults(t_fractal *fractal)
 	fractal->min.re = -2.0;
 	fractal->min.im = -2.0;
 	fractal->max.re = 2.0;
-	fractal->max.im = fractal->min.im + (fractal->max.re - fractal->min.re)
-		* WIN_HEIGHT / WIN_WIDTH;
+	fractal->max.im = 2.0;
 	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
 	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
 	fractal->min_pthread_bound = 0;

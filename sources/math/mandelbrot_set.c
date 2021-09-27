@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   mandelbrot_set.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:57:42 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 21:34:20 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	iterate_mandelbrot(t_fractal *fractal)
 {
-	double		temp;
 	t_complex	z;
+	double		temp;
 	int			iteration;
 
 	iteration = 1;
@@ -62,8 +62,8 @@ void	draw_mandelbrot(t_fractal *fractal)
 	pthread_t	threads[THREADS];
 	t_fractal	fractals[THREADS];
 
-	fractal->factor.re = (fractal->max.re - fractal->min.re) / (WIN_WIDTH - 1);
-	fractal->factor.im = (fractal->max.im - fractal->min.im) / (WIN_HEIGHT - 1);
+	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
+	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
 	i = 0;
 	while (i < THREADS)
 	{
