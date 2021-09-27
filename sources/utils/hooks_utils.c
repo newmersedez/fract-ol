@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:21:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/25 16:56:46 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 19:58:32 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	close_hook(t_fractal *fractal)
 	exit(EXIT_SUCCESS);
 	return (0);
 }
+
 
 int	expose_hook(t_fractal *fractal)
 {

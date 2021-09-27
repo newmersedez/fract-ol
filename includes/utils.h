@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/25 17:10:40 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 20:15:23 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,6 @@ void		my_mlx_pixel_put(t_image *data, int x, int y, int color);
 
 /* Color utils */
 
-int			get_red(int trgb);
-int			get_green(int trgb);
-int			get_blue(int trgb);
 int			get_color(int iteration, int max_iteration);
 
 /* Fractal Drawing functions */
