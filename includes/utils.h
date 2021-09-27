@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:15:23 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 20:50:20 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ typedef struct s_image
 	int		endian;
 }	t_image;
 
+typedef struct s_complex
+{
+	double	re;
+	double	im;
+}	t_complex;
+
 typedef struct s_fractal
 {
 	t_image		image;
@@ -54,7 +60,7 @@ void		set_defaults(t_fractal *fractal);
 /* Hook utils */
 
 int			close_hook(t_fractal *vars);
-int			expose_hook(t_fractal *fractal);
+int			draw_fractal(t_fractal *fractal);
 int			keyboard_hook(int keycode, t_fractal *vars);
 int			mouse_hook(int keycode, int x, int y, t_fractal *fractal);
 

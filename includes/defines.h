@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/25 17:12:50 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 20:52:31 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 
 /* Window settings */
 
-# define WIN_WIDTH			1300
-# define WIN_HEIGHT 		1300
+# define WIN_WIDTH			1280
+# define WIN_HEIGHT 		1280
 # define WIN_NAME			"fract-ol"
-# define THREADS			10
-# define ITERATIONS_START	25
+# define THREADS			8
+# define ITERATIONS_START	30
 # define ITERATIONS_CHANGE	5
 # define ITERATIONS_MIN		10
-# define ITERATIONS_MAX		50
+# define ITERATIONS_MAX		60
 
 /* Colors */
 

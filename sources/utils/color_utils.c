@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:20:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:13:40 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/27 20:38:51 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	get_color(int iteration, int max_iteration)
 	int		red;
 	int		green;
 	int		blue;
-
 
 	t = (double)iteration / (double)(1 + max_iteration);
 	red = (int)(9 * (1 - t) * pow(t, 3) * 255);
