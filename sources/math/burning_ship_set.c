@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia_set.c                                        :+:      :+:    :+:   */
+/*   burning_ship_set.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/22 15:17:50 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 22:13:57 by lorphan          ###   ########.fr       */
+/*   Created: 2021/09/28 22:04:34 by lorphan           #+#    #+#             */
+/*   Updated: 2021/09/28 22:37:04 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-static int	iterate_julia(t_fractal *fractal, int x, int y)
+# define ABS(x) (((x) < 0) ? (-x) : (x))
+
+static int	iterate_burning_ship(t_fractal *fractal)
 {
 	t_complex	z;
 	double		temp;
 	int			iteration;
 
 	iteration = 1;
-	z.re = x * fractal->factor.re + fractal->min.re;
-	z.im = y * fractal->factor.im + fractal->min.im;
+	z.re = fractal->c.re;
+	z.im = fractal->c.im;
 	while (z.re * z.re + z.im * z.im <= 4.0
 		&& iteration <= fractal->max_iteration)
 	{
 		temp = z.re;
 		z.re = z.re * z.re - z.im * z.im + fractal->c.re;
-		z.im = 2.0 * temp * z.im + fractal->c.im;
+		z.im = 2.0 * ABS(temp * z.im) + fractal->c.im;
 		iteration++;
 	}
 	return (iteration);
 }
 
-static void	julia_part(t_fractal *fractal)
+static void	burning_ship_part(t_fractal *fractal)
 {
 	int	x;
 	int	y;
@@ -42,26 +44,26 @@ static void	julia_part(t_fractal *fractal)
 	y = fractal->min_pthread_bound;
 	while (y < fractal->max_pthread_bound)
 	{
+		fractal->c.im = fractal->max.im - y * fractal->factor.im;
 		x = 0;
 		while (x < WIN_WIDTH)
 		{
-			iteration = iterate_julia(fractal, x, y);
+			fractal->c.re = fractal->min.re + x * fractal->factor.re;
+			iteration = iterate_burning_ship(fractal);
 			color = get_color(iteration, fractal->max_iteration);
-			my_mlx_pixel_put(&fractal->image, x, y, color);
+			my_mlx_pixel_put(&fractal->image, WIN_WIDTH - x - 1, WIN_HEIGHT - y - 1, color);
 			x++;
 		}
 		y++;
 	}
 }
 
-void	julia(t_fractal *fractal)
+void	burning_ship(t_fractal *fractal)
 {
 	int			i;
 	pthread_t	threads[THREADS];
 	t_fractal	fractals[THREADS];
 
-	fractal->c.re = -0.4;
-	fractal->c.im = 0.6;
 	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
 	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
 	i = 0;
@@ -71,7 +73,7 @@ void	julia(t_fractal *fractal)
 		fractals[i].min_pthread_bound = i * (WIN_HEIGHT / THREADS);
 		fractals[i].max_pthread_bound = (i + 1) * (WIN_HEIGHT / THREADS);
 		pthread_create(&threads[i], NULL,
-			(void *(*)(void *))julia_part, (void *)&fractals[i]);
+			(void *(*)(void *))burning_ship_part, (void *)&fractals[i]);
 		i++;
 	}
 	while (i-- > 0)

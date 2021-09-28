@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:17:22 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 19:49:07 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 22:12:50 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ void	set_defaults(t_fractal *fractal)
 	if (fractal->fractal_type == MANDELBROT)
 		fractal->fractal_formula = &mandelbrot;
 	else if (fractal->fractal_type == JULIA)
-		fractal->fractal_formula = &julia; 
+		fractal->fractal_formula = &julia;
+	else if (fractal->fractal_type == BURNING_SHIP)
+		fractal->fractal_formula = &burning_ship; 
 }
