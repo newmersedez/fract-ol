@@ -6,13 +6,11 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 22:04:34 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 22:37:04 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 23:06:57 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
-
-# define ABS(x) (((x) < 0) ? (-x) : (x))
 
 static int	iterate_burning_ship(t_fractal *fractal)
 {
@@ -51,7 +49,7 @@ static void	burning_ship_part(t_fractal *fractal)
 			fractal->c.re = fractal->min.re + x * fractal->factor.re;
 			iteration = iterate_burning_ship(fractal);
 			color = get_color(iteration, fractal->max_iteration);
-			my_mlx_pixel_put(&fractal->image, WIN_WIDTH - x - 1, WIN_HEIGHT - y - 1, color);
+			my_mlx_pixel_put(&fractal->image, x, WIN_HEIGHT - y - 1, color);
 			x++;
 		}
 		y++;

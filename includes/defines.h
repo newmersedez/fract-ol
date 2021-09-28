@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 22:43:47 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 23:15:38 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 
 /* Threads defaults */
 # define THREADS			8
-# define ITERATIONS_START	30
-# define ITERATIONS_CHANGE	5
+# define ITERATIONS_START	32
+# define ITERATIONS_CHANGE	8
 # define ITERATIONS_MIN		10
-# define ITERATIONS_MAX		500
+# define ITERATIONS_MAX		256
 
 /* Fractals types */
 
@@ -35,6 +35,7 @@
 # define MANDELBROT			0
 # define JULIA				1
 # define BURNING_SHIP		2
+# define ABS(x) (((x) < 0) ? (-x) : (x))
 
 /* Colors */
 

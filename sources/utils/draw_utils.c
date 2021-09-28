@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:24:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 17:32:51 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 23:08:16 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,15 @@ int	draw_fractal(t_fractal *fractal)
 	fractal->fractal_formula(fractal);
 	mlx_put_image_to_window(fractal->window.mlx, fractal->window.win,
 		fractal->image.img, 0, 0);
-	// mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 10, WHITE,
-	// 	"    Mandelbrot set    ");
-	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 40, WHITE,
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 10, WHITE,
 		"Controls - WASD/arrows");
-	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 70, WHITE,
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 40, WHITE,
 		"Zoom in - scroll up");
-	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 90, WHITE,
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 60, WHITE,
 		"(mouse left buton)");
-	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 120, WHITE,
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 90, WHITE,
 		"Zoom out - scroll down");
-	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 140, WHITE,
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 110, WHITE,
 		"(mouse right buton)");
 	return (0);
 }
