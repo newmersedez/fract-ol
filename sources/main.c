@@ -6,16 +6,24 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:13:48 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:45:36 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 17:18:58 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
 	t_fractal	fractal;
 
+	if (argc != 2)
+		exit(EXIT_FAILURE);
+	if (!ft_strcmp(argv[1], "Mandelbrot"))
+		fractal.fractal_type = MANDELBROT;
+	else if (!ft_strcmp(argv[1], "Julia"))
+		fractal.fractal_type = JULIA;
+	else
+		exit(EXIT_FAILURE);
 	fractal.window = create_window(WIN_WIDTH, WIN_HEIGHT, WIN_NAME);
 	fractal.image = create_image(fractal.window);
 	set_defaults(&fractal);

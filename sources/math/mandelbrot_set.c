@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 21:34:20 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 17:32:00 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	iterate_mandelbrot(t_fractal *fractal)
 	return (iteration);
 }
 
-static void	draw_mandelbrot_part(t_fractal *fractal)
+static void	mandelbrot_part(t_fractal *fractal)
 {
 	int	y;
 	int	x;
@@ -56,7 +56,7 @@ static void	draw_mandelbrot_part(t_fractal *fractal)
 	}
 }
 
-void	draw_mandelbrot(t_fractal *fractal)
+void	mandelbrot(t_fractal *fractal)
 {
 	int			i;
 	pthread_t	threads[THREADS];
@@ -71,7 +71,7 @@ void	draw_mandelbrot(t_fractal *fractal)
 		fractals[i].min_pthread_bound = i * (WIN_HEIGHT / THREADS);
 		fractals[i].max_pthread_bound = (i + 1) * (WIN_HEIGHT / THREADS);
 		pthread_create(&threads[i], NULL,
-			(void *(*)(void *))draw_mandelbrot_part, (void *)&fractals[i]);
+			(void *(*)(void *))mandelbrot_part, (void *)&fractals[i]);
 		i++;
 	}
 	while (i-- > 0)

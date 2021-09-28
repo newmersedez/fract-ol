@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 16:05:10 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 17:04:41 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,17 @@
 # define ITERATIONS_START	30
 # define ITERATIONS_CHANGE	5
 # define ITERATIONS_MIN		10
-# define ITERATIONS_MAX		60
+# define ITERATIONS_MAX		100
+
+/* Fractals types */
+
+# define NaN				-1
+# define MANDELBROT			0
+# define JULIA				1
 
 /* Colors */
 
 # define WHITE				0xFFFFFF
-# define MARINE				0x0FFFF0
-# define SALMON_PINK		0xFF9999
 
 /* Mouse codes */
 

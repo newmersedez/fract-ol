@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 21:03:48 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 17:24:30 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ typedef struct s_fractal
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
+	void		(*fractal_formula)(struct s_fractal *fractal);
+	int			fractal_type;
 	int			max_iteration;
 	int			min_pthread_bound;
 	int			max_pthread_bound;
@@ -59,9 +61,9 @@ void		set_defaults(t_fractal *fractal);
 
 /* Hook utils */
 
-int			close_hook(t_fractal *vars);
+int			close_hook(t_fractal *fractal);
 int			draw_fractal(t_fractal *fractal);
-int			keyboard_hook(int keycode, t_fractal *vars);
+int			keyboard_hook(int keycode, t_fractal *fractal);
 int			mouse_hook(int keycode, int x, int y, t_fractal *fractal);
 
 /* Control utils */
@@ -85,7 +87,7 @@ int			get_color(int iteration, int max_iteration);
 
 /* Fractal Drawing functions */
 
-void		draw_mandelbrot(t_fractal *vars);
-void		draw_julia(t_fractal *vars);
+void		mandelbrot(t_fractal *fractal);
+void		julia(t_fractal *fractal);
 
 #endif
