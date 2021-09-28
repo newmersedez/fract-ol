@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 21:31:50 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 16:05:10 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # define WIN_WIDTH			1280
 # define WIN_HEIGHT 		1280
-# define FPS				60
+# define UPDATE				30
 # define WIN_NAME			"fract-ol"
 
 /* Threads defaults */

@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:58:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 21:29:55 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 16:15:10 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,40 @@
 
 void	keyboard_move_right(t_fractal *fractal)
 {
-	fractal->min.re += FPS * fractal->factor.re;
-	fractal->max.re += FPS * fractal->factor.re;
+	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
+	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
+	fractal->min.re += UPDATE * fractal->factor.re;
+	fractal->max.re += UPDATE * fractal->factor.re;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
 }
 
 void	keyboard_move_left(t_fractal *fractal)
 {
-	fractal->min.re -= FPS * fractal->factor.re;
-	fractal->max.re -= FPS * fractal->factor.re;
+	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
+	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
+	fractal->min.re -= UPDATE * fractal->factor.re;
+	fractal->max.re -= UPDATE * fractal->factor.re;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
 }
 
 void	keyboard_move_up(t_fractal *fractal)
 {
-	fractal->min.im += FPS * fractal->factor.re;
-	fractal->max.im += FPS * fractal->factor.re;
+	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
+	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
+	fractal->min.im += UPDATE * fractal->factor.im;
+	fractal->max.im += UPDATE * fractal->factor.im;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
 }
 
 void	keyboard_move_down(t_fractal *fractal)
 {
-	fractal->min.im -= FPS * fractal->factor.re;
-	fractal->max.im -= FPS * fractal->factor.re;
+	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
+	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
+	fractal->min.im -= UPDATE * fractal->factor.im;
+	fractal->max.im -= UPDATE * fractal->factor.im;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
 }
