@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 17:32:00 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 21:49:06 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	iterate_mandelbrot(t_fractal *fractal)
 	double		temp;
 	int			iteration;
 
-	iteration = 1;
+	iteration = 5;
 	z.re = fractal->c.re;
 	z.im = fractal->c.im;
 	while (z.re * z.re + z.im * z.im <= 4.0
@@ -34,8 +34,8 @@ static int	iterate_mandelbrot(t_fractal *fractal)
 
 static void	mandelbrot_part(t_fractal *fractal)
 {
-	int	y;
 	int	x;
+	int	y;
 	int	color;
 	int	iteration;
 

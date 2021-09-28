@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 17:24:30 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 20:09:50 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int			mouse_hook(int keycode, int x, int y, t_fractal *fractal);
 /* Control utils */
 
 void		mouse_zoom_in(t_fractal *fractal, int x, int y);
-void		mouse_zoom_out(t_fractal *fractal, int x, int y);
+void		mouse_zoom_out(t_fractal *fractal);
 void		keyboard_move_up(t_fractal *fractal);
 void		keyboard_move_down(t_fractal *fractal);
 void		keyboard_move_left(t_fractal *fractal);

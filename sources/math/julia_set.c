@@ -6,45 +6,74 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:17:50 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 17:34:24 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 21:58:08 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-void	julia(t_fractal *fractal)
+static int	iterate_julia(t_fractal *fractal, int x, int y)
 {
 	t_complex	z;
-	int			x;
-	int			y;
-	int			temp;
-	int			color;
+	double		temp;
 	int			iteration;
 
-	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
-	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
-	x = 0;
-	while (x < WIN_WIDTH)
+	iteration = 5;
+	z.re = x * fractal->factor.re + fractal->min.re;
+	z.im = y * fractal->factor.im + fractal->min.im;
+	while (z.re * z.re + z.im * z.im <= 4.0
+		&& iteration <= fractal->max_iteration)
 	{
-		y = 0;
-		fractal->c.im = fractal->max.im - y * fractal->factor.im;
-		while (y < WIN_HEIGHT)
+		temp = z.re;
+		z.re = z.re * z.re - z.im * z.im + fractal->c.re;
+		z.im = 2.0 * temp * z.im + fractal->c.im;
+		iteration++;
+	}
+	return (iteration);
+}
+
+static void	julia_part(t_fractal *fractal)
+{
+	int	x;
+	int	y;
+	int	color;
+	int	iteration;
+
+	y = fractal->min_pthread_bound;
+	while (y < fractal->max_pthread_bound)
+	{
+		x = 0;
+		while (x < WIN_WIDTH)
 		{
-			fractal->c.re = fractal->min.re + x * fractal->factor.re;
-   			iteration = 1;
-			z.re = x * fractal->factor.re;
-			z.im = y * fractal->factor.im;
-			while (z.re * z.re + z.im * z.im <= 4.0 && iteration <= fractal->max_iteration)
-			{
-				temp = z.re;
-				z.re = z.re * z.re - z.im * z.im + fractal->c.re;
-				z.im = 2.0 * temp * z.im + fractal->c.im;
-				iteration++;
-			}
+			iteration = iterate_julia(fractal, x, y);
 			color = get_color(iteration, fractal->max_iteration);
 			my_mlx_pixel_put(&fractal->image, x, y, color);
-			y++;
+			x++;
 		}
-		x++;
+		y++;
 	}
+}
+
+void	julia(t_fractal *fractal)
+{
+	int			i;
+	pthread_t	threads[THREADS];
+	t_fractal	fractals[THREADS];
+
+	fractal->c.re = -0.4;
+	fractal->c.im = 0.6;
+	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
+	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
+	i = 0;
+	while (i < THREADS)
+	{
+		fractals[i] = *fractal;
+		fractals[i].min_pthread_bound = i * (WIN_HEIGHT / THREADS);
+		fractals[i].max_pthread_bound = (i + 1) * (WIN_HEIGHT / THREADS);
+		pthread_create(&threads[i], NULL,
+			(void *(*)(void *))julia_part, (void *)&fractals[i]);
+		i++;
+	}
+	while (i-- > 0)
+		pthread_join(threads[i], NULL);
 }

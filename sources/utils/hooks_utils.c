@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:21:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/27 20:46:22 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/28 20:09:38 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	mouse_hook(int keycode, int x, int y, t_fractal *fractal)
 	if (keycode == MOUSE_SCROLL_UP || keycode == MOUSE_LEFT_BUTTON)
 		mouse_zoom_in(fractal, x, y);
 	if (keycode == MOUSE_SCROLL_DOWN || keycode == MOUSE_RIGHT_BUTTON)
-		mouse_zoom_out(fractal, x, y);
+		mouse_zoom_out(fractal);
 	return (0);
 }
 
