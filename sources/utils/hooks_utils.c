@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:21:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 17:34:11 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 18:05:16 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	mouse_motion_hook(int x, int y, t_fractal *fractal)
 		&& (x >= 0 && x <= WIN_WIDTH) && (y >= 0 && y <= WIN_HEIGHT))
 	{
 		printf("%d %d\n", x, y);
-		fractal->c.re =  ((double)(x - WIN_WIDTH / 2) / WIN_WIDTH) * 5;
-		fractal->c.im =  ((double)(y - WIN_HEIGHT / 2) / WIN_HEIGHT) * 5;
+		fractal->c.re = 5 * ((double)(x - WIN_WIDTH / 2) / WIN_WIDTH);
+		fractal->c.im = 5 * ((double)(y - WIN_HEIGHT / 2) / WIN_HEIGHT);
 		mlx_clear_window(fractal->window.mlx, fractal->window.win);
 		draw_fractal(fractal);
 	}

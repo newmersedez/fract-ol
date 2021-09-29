@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:24:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 23:08:16 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 19:49:02 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,10 @@ void	my_mlx_pixel_put(t_image *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-int	draw_fractal(t_fractal *fractal)
+void	display_control_tips(t_fractal *fractal)
 {
-	fractal->image = create_image(fractal->window);
-	fractal->fractal_formula(fractal);
-	mlx_put_image_to_window(fractal->window.mlx, fractal->window.win,
-		fractal->image.img, 0, 0);
 	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 10, WHITE,
-		"Controls - WASD/arrows");
+		"Move - WASD/arrows");
 	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 40, WHITE,
 		"Zoom in - scroll up");
 	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 60, WHITE,
@@ -36,5 +32,31 @@ int	draw_fractal(t_fractal *fractal)
 		"Zoom out - scroll down");
 	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 110, WHITE,
 		"(mouse right buton)");
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 140, WHITE,
+		"Julia animation - CTRL");
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 170, WHITE,
+		"Color palletes - 1/2/3");
+}
+
+void	display_program_tips(void)
+{
+	ft_putendl_fd("Correct format: ./fractol \"Fractal set\"\n", 1);
+	ft_putendl_fd("Available fractal sets:", 1);
+	ft_putendl_fd("1) Mandelbrot", 1);
+	ft_putendl_fd("2) Julia", 1);
+	ft_putendl_fd("3) Burning_ship", 1);
+}
+
+int	draw_fractal(t_fractal *fractal)
+{
+	if (fractal->fractal_type == MANDELBROT)
+		mandelbrot(fractal);
+	else if (fractal->fractal_type == JULIA)
+		julia(fractal);
+	else if (fractal->fractal_type == BURNING_SHIP)
+		burning_ship(fractal);
+	mlx_put_image_to_window(fractal->window.mlx, fractal->window.win,
+		fractal->image.img, 0, 0);
+	display_control_tips(fractal);
 	return (0);
 }

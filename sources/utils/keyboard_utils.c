@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:58:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 16:52:13 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 17:53:53 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,34 +54,4 @@ void	keyboard_move_down(t_fractal *fractal)
 	fractal->max.im -= UPDATE * fractal->factor.im;
 	mlx_clear_window(fractal->window.mlx, fractal->window.win);
 	draw_fractal(fractal);
-}
-
-void	keyboard_julia_motion(t_fractal *fractal)
-{
-	if (fractal->is_julia_motion == OFF)
-		fractal->is_julia_motion = ON;
-	else if (fractal->is_julia_motion == ON)
-		fractal->is_julia_motion = OFF;
-}
-
-void	keyboard_less_iterations(t_fractal *fractal)
-{
-	printf("less operations\n");
-	if (fractal->max_iteration - ITERATIONS_CHANGE >= ITERATIONS_MIN)
-	{
-		fractal->max_iteration -= ITERATIONS_CHANGE;
-		mlx_clear_window(fractal->window.mlx, fractal->window.win);
-		draw_fractal(fractal);
-	}
-}
-
-void	keyboard_more_iterations(t_fractal *fractal)
-{
-	printf("more operations\n");
-	if (fractal->max_iteration + ITERATIONS_CHANGE <= ITERATIONS_MAX)
-	{
-		fractal->max_iteration += ITERATIONS_CHANGE;
-		mlx_clear_window(fractal->window.mlx, fractal->window.win);
-		draw_fractal(fractal);
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:13:48 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 17:19:20 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 18:38:02 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int	main(int argc, char *argv[])
 	t_fractal	fractal;
 
 	if (argc != 2)
+	{
+		display_program_tips();
 		exit(EXIT_FAILURE);
+	}
 	if (!ft_strcmp(argv[1], "Mandelbrot"))
 		fractal.fractal_type = MANDELBROT;
 	else if (!ft_strcmp(argv[1], "Julia"))
@@ -25,7 +28,10 @@ int	main(int argc, char *argv[])
 	else if (!ft_strcmp(argv[1], "Burning_ship"))
 		fractal.fractal_type = BURNING_SHIP;
 	else
+	{
+		display_program_tips();
 		exit(EXIT_FAILURE);
+	}
 	fractal.window = create_window(WIN_WIDTH, WIN_HEIGHT, WIN_NAME);
 	fractal.image = create_image(fractal.window);
 	set_defaults(&fractal);

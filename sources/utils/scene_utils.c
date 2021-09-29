@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:17:22 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 17:11:04 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 19:48:37 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,6 @@ void	set_defaults(t_fractal *fractal)
 	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
 	fractal->min_pthread_bound = 0;
 	fractal->max_pthread_bound = WIN_HEIGHT / THREADS;
-	fractal->is_julia_motion = OFF;
 	fractal->max_iteration = ITERATIONS_START;
-	if (fractal->fractal_type == MANDELBROT)
-		fractal->fractal_formula = &mandelbrot;
-	else if (fractal->fractal_type == JULIA)
-		fractal->fractal_formula = &julia;
-	else if (fractal->fractal_type == BURNING_SHIP)
-		fractal->fractal_formula = &burning_ship; 
+	fractal->is_julia_motion = OFF;
 }

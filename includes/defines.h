@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 17:27:21 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 19:30:57 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,16 @@
 
 /* Fractals math */
 
-# define NaN				-1
 # define MANDELBROT			0
 # define JULIA				1
 # define BURNING_SHIP		2
-# define ABS(x) (((x) < 0) ? (-x) : (x))
 
 /* Colors */
 
 # define WHITE				0xFFFFFF
+# define COLORSET_GALACTIC	0
+# define COLORSET_GREEN		1
+# define COLORSET_RED		2
 
 /* Mouse codes */
 

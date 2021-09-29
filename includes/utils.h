@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 17:02:33 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 19:47:21 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ typedef struct s_fractal
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
-	void		(*fractal_formula)(struct s_fractal *fractal);
 	int			is_julia_motion;
 	int			fractal_type;
 	int			max_iteration;
@@ -54,20 +53,20 @@ typedef struct s_fractal
 	int			max_pthread_bound;
 }	t_fractal;
 
-/* Scene Utils */
+/* Scene functions */
 
 t_window	create_window(int width, int height, char *title);
 t_image		create_image(t_window window);
 void		set_defaults(t_fractal *fractal);
 
-/* Hook utils */
+/* Hook functions */
 
 int			close_hook(t_fractal *fractal);
 int			draw_fractal(t_fractal *fractal);
 int			keyboard_hook(int keycode, t_fractal *fractal);
 int			mouse_hook(int keycode, int x, int y, t_fractal *fractal);
 
-/* Control utils */
+/* Control functions */
 
 void		mouse_zoom_in(t_fractal *fractal, int x, int y);
 void		mouse_zoom_out(t_fractal *fractal);
@@ -80,15 +79,14 @@ void		keyboard_julia_motion(t_fractal *fractal);
 void		keyboard_less_iterations(t_fractal *fractal);
 void		keyboard_more_iterations(t_fractal *fractal);
 
-/* Draw utils */
+/* Draw functions */
 
 void		my_mlx_pixel_put(t_image *data, int x, int y, int color);
-
-/* Color utils */
-
 int			get_color(int iteration, int max_iteration);
+void		display_control_tips(t_fractal *fractal);
+void		display_program_tips(void);
 
-/* Fractal Drawing functions */
+/* Fractal functions */
 
 void		mandelbrot(t_fractal *fractal);
 void		julia(t_fractal *fractal);

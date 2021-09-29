@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:35:33 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 16:56:54 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 18:05:54 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	mouse_zoom_in(t_fractal *fractal, int x, int y)
 {
 	t_complex	mouse;
+
 	(void)x;
 	(void)y;
 	(void)mouse;
