@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   action_utils.c                                     :+:      :+:    :+:   */
+/*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 17:54:21 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 17:54:34 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 20:12:49 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,25 @@ void	keyboard_more_iterations(t_fractal *fractal)
 	{
 		fractal->max_iteration += ITERATIONS_CHANGE;
 		mlx_clear_window(fractal->window.mlx, fractal->window.win);
+		draw_fractal(fractal);
+	}
+}
+
+void	keyboard_change_colorset(int keycode, t_fractal *fractal)
+{
+	if (keycode == KEY_ONE)
+	{
+		fractal->colorset = COLORSET_GALACTIC;
+		draw_fractal(fractal);
+	}
+	else if (keycode == KEY_TWO)
+	{
+		fractal->colorset = COLORSET_GREEN;
+		draw_fractal(fractal);
+	}
+	else if (keycode == KEY_THREE)
+	{
+		fractal->colorset = COLORSET_RED;
 		draw_fractal(fractal);
 	}
 }

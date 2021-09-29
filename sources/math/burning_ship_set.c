@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 22:04:34 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 18:10:34 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 21:53:20 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	burning_ship_part(t_fractal *fractal)
 		{
 			fractal->c.re = fractal->min.re + x * fractal->factor.re;
 			iteration = iterate_burning_ship(fractal);
-			color = get_color(iteration, fractal->max_iteration);
+			color = get_color(fractal, iteration, fractal->max_iteration);
 			my_mlx_pixel_put(&fractal->image, x, WIN_HEIGHT - y - 1, color);
 			x++;
 		}

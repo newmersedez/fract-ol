@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 19:47:21 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 21:53:31 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_fractal
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
+	int			colorset;
 	int			is_julia_motion;
 	int			fractal_type;
 	int			max_iteration;
@@ -76,13 +77,14 @@ void		keyboard_move_down(t_fractal *fractal);
 void		keyboard_move_left(t_fractal *fractal);
 void		keyboard_move_right(t_fractal *fractal);
 void		keyboard_julia_motion(t_fractal *fractal);
+void		keyboard_change_colorset(int keycode, t_fractal *fractal);
 void		keyboard_less_iterations(t_fractal *fractal);
 void		keyboard_more_iterations(t_fractal *fractal);
 
 /* Draw functions */
 
 void		my_mlx_pixel_put(t_image *data, int x, int y, int color);
-int			get_color(int iteration, int max_iteration);
+int			get_color(t_fractal *fractal, int iteration, int max_iteration);
 void		display_control_tips(t_fractal *fractal);
 void		display_program_tips(void);
 

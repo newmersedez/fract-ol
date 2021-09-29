@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 22:14:01 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 21:53:31 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	iterate_mandelbrot(t_fractal *fractal)
 	z.im = fractal->c.im;
 	while (z.re * z.re + z.im * z.im <= 4.0
 		&& iteration <= fractal->max_iteration)
-	{
+	{ 
 		temp = z.re;
 		z.re = z.re * z.re - z.im * z.im + fractal->c.re;
 		z.im = 2.0 * temp * z.im + fractal->c.im;
@@ -48,7 +48,7 @@ static void	mandelbrot_part(t_fractal *fractal)
 		{
 			fractal->c.re = fractal->min.re + x * fractal->factor.re;
 			iteration = iterate_mandelbrot(fractal);
-			color = get_color(iteration, fractal->max_iteration);
+			color = get_color(fractal, iteration, fractal->max_iteration);
 			my_mlx_pixel_put(&fractal->image, x, y, color);
 			x++;
 		}

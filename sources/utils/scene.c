@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:17:22 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 19:48:37 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 20:03:05 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,17 @@ t_image	create_image(t_window window)
 
 void	set_defaults(t_fractal *fractal)
 {
-	fractal->min.re = -2.0;
-	fractal->min.im = -2.0;
-	fractal->max.re = 2.0;
-	fractal->max.im = 2.0;
 	fractal->c.re = -0.4;
 	fractal->c.im = 0.6;
-	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
-	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
+	fractal->min.re = -2.0;
+	fractal->max.re = 2.0;
+	fractal->min.im = -2.0;
+	fractal->max.im = 2.0;
+	fractal->is_julia_motion = OFF;
+	fractal->colorset = COLORSET_GALACTIC;
+	fractal->max_iteration = ITERATIONS_START;
 	fractal->min_pthread_bound = 0;
 	fractal->max_pthread_bound = WIN_HEIGHT / THREADS;
-	fractal->max_iteration = ITERATIONS_START;
-	fractal->is_julia_motion = OFF;
+	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
+	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
 }

@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 19:30:57 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 22:03:07 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # define WIN_WIDTH			1024
 # define WIN_HEIGHT 		1024
-# define UPDATE				60
+# define OFFSET				60
 # define WIN_NAME			"fract-ol"
 # define OFF				0	
 # define ON					1	
@@ -60,6 +60,9 @@
 # define KEY_W				13
 # define KEY_Q				12	
 # define KEY_E				14
+# define KEY_ONE			18
+# define KEY_TWO			19
+# define KEY_THREE			20
 # define KEY_SPACE			49
 # define KEY_ESC			53
 # define KEY_LEFT			123
