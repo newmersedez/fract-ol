@@ -6,7 +6,7 @@
 #    By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 16:52:01 by lorphan           #+#    #+#              #
-#    Updated: 2021/09/25 14:11:17 by lorphan          ###   ########.fr        #
+#    Updated: 2021/09/29 22:35:03 by lorphan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
 RM				= rm -rf
 
 INCLUDES_DIR	= ./includes/
-SOURCES_DIR		= ./sources/ ./sources/utils/ ./sources/math/ ./sources/interface/
+SOURCES_DIR		= ./sources/ ./sources/controls/ ./sources/drawing/ ./sources/math/ ./sources/utils/
 OBJECTS_DIR		= ./objects/
 LIBFT_DIR		= ./libft/
 

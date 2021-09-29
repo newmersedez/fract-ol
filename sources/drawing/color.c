@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:20:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 21:53:31 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 22:42:20 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static int	set_colorset_galactic(int iteration, int max_iteration)
 
 	if (iteration >= max_iteration)
 	{
-		red = 30;
+		red = 80;
 		green = 0;
-		blue = 0;
+		blue = 20;
 	}
 	else
 	{	
@@ -64,9 +64,9 @@ static int	set_colorset_red(int iteration, int max_iteration)
 
 	if (iteration >= max_iteration)
 	{
-		red = 30;
-		green = 0;
-		blue = 0;
+		red = 141;
+		green = 26;
+		blue = 187;
 	}
 	else
 	{
