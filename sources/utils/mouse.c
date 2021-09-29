@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:35:33 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 22:21:28 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 22:28:53 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void	mouse_zoom_in(t_fractal *fractal, int x, int y)
 
 void	mouse_zoom_out(t_fractal *fractal)
 {
-	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
-	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
 	fractal->max.re += OFFSET * fractal->factor.re;
 	fractal->min.re -= OFFSET * fractal->factor.re;
 	fractal->max.im += OFFSET * fractal->factor.im;
