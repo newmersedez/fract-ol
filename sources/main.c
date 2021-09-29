@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:13:48 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 22:12:36 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 17:19:20 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char *argv[])
 	fractal.image = create_image(fractal.window);
 	set_defaults(&fractal);
 	draw_fractal(&fractal);
+	mlx_hook(fractal.window.win, 6, 6, mouse_motion_hook, &fractal);
 	mlx_hook(fractal.window.win, 4, 0, mouse_hook, &fractal);
 	mlx_hook(fractal.window.win, 2, 5, keyboard_hook, &fractal);
 	mlx_hook(fractal.window.win, 17, 0, close_hook, &fractal);

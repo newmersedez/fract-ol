@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:17:50 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 22:13:57 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 17:10:58 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ void	julia(t_fractal *fractal)
 	pthread_t	threads[THREADS];
 	t_fractal	fractals[THREADS];
 
-	fractal->c.re = -0.4;
-	fractal->c.im = 0.6;
 	fractal->factor.re = (fractal->max.re - fractal->min.re) / WIN_WIDTH;
 	fractal->factor.im = (fractal->max.im - fractal->min.im) / WIN_HEIGHT;
 	i = 0;

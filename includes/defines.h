@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 23:15:38 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 17:27:21 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 
 /* Window defaults */
 
-# define WIN_WIDTH			1000
-# define WIN_HEIGHT 		1000
+# define WIN_WIDTH			1024
+# define WIN_HEIGHT 		1024
 # define UPDATE				60
 # define WIN_NAME			"fract-ol"
+# define OFF				0	
+# define ON					1	
 
 /* Threads defaults */
 # define THREADS			8
@@ -29,7 +31,7 @@
 # define ITERATIONS_MIN		10
 # define ITERATIONS_MAX		256
 
-/* Fractals types */
+/* Fractals math */
 
 # define NaN				-1
 # define MANDELBROT			0
@@ -57,10 +59,12 @@
 # define KEY_W				13
 # define KEY_Q				12	
 # define KEY_E				14
+# define KEY_SPACE			49
 # define KEY_ESC			53
 # define KEY_LEFT			123
 # define KEY_RIGHT			124
 # define KEY_DOWN			125
 # define KEY_UP				126
+# define KEY_CTRL			256
 
 #endif

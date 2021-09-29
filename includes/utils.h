@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 22:11:43 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 17:02:33 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_fractal
 	t_complex	max;
 	t_complex	factor;
 	void		(*fractal_formula)(struct s_fractal *fractal);
+	int			is_julia_motion;
 	int			fractal_type;
 	int			max_iteration;
 	int			min_pthread_bound;
@@ -70,10 +71,12 @@ int			mouse_hook(int keycode, int x, int y, t_fractal *fractal);
 
 void		mouse_zoom_in(t_fractal *fractal, int x, int y);
 void		mouse_zoom_out(t_fractal *fractal);
+int			mouse_motion_hook(int x, int y, t_fractal *fractal);
 void		keyboard_move_up(t_fractal *fractal);
 void		keyboard_move_down(t_fractal *fractal);
 void		keyboard_move_left(t_fractal *fractal);
 void		keyboard_move_right(t_fractal *fractal);
+void		keyboard_julia_motion(t_fractal *fractal);
 void		keyboard_less_iterations(t_fractal *fractal);
 void		keyboard_more_iterations(t_fractal *fractal);
 

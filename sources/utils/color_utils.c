@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:20:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/28 23:13:49 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/29 16:24:38 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_color(int iteration, int max_iteration)
 
 	if (iteration >= max_iteration)
 	{
-		red = 50;
+		red = 30;
 		green = 0;
 		blue = 0;
 	}
