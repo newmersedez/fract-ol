@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:24:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 17:38:48 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 17:50:12 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	display_application_tips(void)
 	ft_putendl_fd("Available fractal sets:", 1);
 	ft_putendl_fd("1) Mandelbrot", 1);
 	ft_putendl_fd("2) Julia", 1);
-	ft_putendl_fd("3) Burning_ship", 1);
+	ft_putendl_fd("3) Burningship", 1);
 	ft_putendl_fd("4) Tricorn\n", 1);
 }
 
@@ -43,8 +43,10 @@ void	display_control_tips(t_fractal *fractal)
 	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 110, WHITE,
 		"(mouse right buton)");
 	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 140, WHITE,
-		"Julia animation - CTRL");
+		"Depth down/up - Q/E");
 	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 170, WHITE,
+		"Julia animation - CTRL");
+	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 200, WHITE,
 		"Color palletes - 1/2/3");
 }
 
@@ -54,8 +56,8 @@ int	draw_fractal(t_fractal *fractal)
 		mandelbrot(fractal);
 	else if (fractal->fractal_type == JULIA)
 		julia(fractal);
-	else if (fractal->fractal_type == BURNING_SHIP)
-		burning_ship(fractal);
+	else if (fractal->fractal_type == BURNINGSHIP)
+		burningship(fractal);
 	else if (fractal->fractal_type == TRICORN)
 		tricorn(fractal);
 	mlx_put_image_to_window(fractal->window.mlx, fractal->window.win,

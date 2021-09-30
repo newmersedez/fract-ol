@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   burning_ship_set.c                                 :+:      :+:    :+:   */
+/*   burningship_set.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 22:04:34 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 21:53:20 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 17:45:51 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-static int	iterate_burning_ship(t_fractal *fractal)
+static int	iterate_burningship(t_fractal *fractal)
 {
 	t_complex	z;
 	double		temp;
@@ -32,7 +32,7 @@ static int	iterate_burning_ship(t_fractal *fractal)
 	return (iteration);
 }
 
-static void	burning_ship_part(t_fractal *fractal)
+static void	burningship_part(t_fractal *fractal)
 {
 	int	x;
 	int	y;
@@ -47,7 +47,7 @@ static void	burning_ship_part(t_fractal *fractal)
 		while (x < WIN_WIDTH)
 		{
 			fractal->c.re = fractal->min.re + x * fractal->factor.re;
-			iteration = iterate_burning_ship(fractal);
+			iteration = iterate_burningship(fractal);
 			color = get_color(fractal, iteration, fractal->max_iteration);
 			my_mlx_pixel_put(&fractal->image, x, WIN_HEIGHT - y - 1, color);
 			x++;
@@ -56,7 +56,7 @@ static void	burning_ship_part(t_fractal *fractal)
 	}
 }
 
-void	burning_ship(t_fractal *fractal)
+void	burningship(t_fractal *fractal)
 {
 	int			i;
 	pthread_t	threads[THREADS];
@@ -71,7 +71,7 @@ void	burning_ship(t_fractal *fractal)
 		fractals[i].min_pthread_bound = i * (WIN_HEIGHT / THREADS);
 		fractals[i].max_pthread_bound = (i + 1) * (WIN_HEIGHT / THREADS);
 		pthread_create(&threads[i], NULL,
-			(void *(*)(void *))burning_ship_part, (void *)&fractals[i]);
+			(void *(*)(void *))burningship_part, (void *)&fractals[i]);
 		i++;
 	}
 	while (i-- > 0)
