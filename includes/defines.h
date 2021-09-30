@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 15:01:16 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 15:35:40 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 
 # define WHITE				0xFFFFFF
 # define COLORSET_GALACTIC	0
-# define COLORSET_GREEN		1
-# define COLORSET_RED		2
+# define COLORSET_RED		1
+# define COLORSET_PSYCHO	2
 
 #endif

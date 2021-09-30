@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:21:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 13:11:12 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 15:46:13 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	close_hook(t_fractal *fractal)
 {
-	printf("exit with red cross\n");
 	success_exit(fractal);
 	return (0);
 }
@@ -60,9 +59,6 @@ int	keyboard_hook(int keycode, t_fractal *fractal)
 	else if (keycode == KEY_ONE || keycode == KEY_TWO || keycode == KEY_THREE)
 		keyboard_change_colorset(keycode, fractal);
 	else if (keycode == KEY_ESC)
-	{
-		printf("exit with esc\n");
 		success_exit(fractal);
-	}
 	return (0);
 }

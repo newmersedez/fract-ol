@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:13:48 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 14:26:31 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 16:51:16 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int	main(int argc, char *argv[])
 
 	init_application_from_args(&fractal, argc, argv);
 	fractal.window = create_window(WIN_WIDTH, WIN_HEIGHT, WIN_NAME);
+	if (!fractal.window.mlx || !fractal.window.win)
+		fail_exit(&fractal, INIT_WINDOW_ERROR);
 	fractal.image = create_image(&fractal);
+	if (!fractal.image.img || !fractal.image.addr)
+		fail_exit(&fractal, INIT_IMAGE_ERROR);
 	set_defaults(&fractal);
 	draw_fractal(&fractal);
 	mlx_hook(fractal.window.win, 6, 6, mouse_motion_hook, &fractal);

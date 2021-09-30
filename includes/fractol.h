@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:15:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 13:36:40 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 15:46:21 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <mlx.h>
 # include <math.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <pthread.h>
 

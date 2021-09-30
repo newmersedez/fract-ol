@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:17:22 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 14:26:31 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 16:41:15 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ t_window	create_window(int width, int height, char *title)
 
 	window.mlx = mlx_init();
 	window.win = mlx_new_window(window.mlx, width, height, title);
-	if (!window.mlx || !window.win)
-		fail_exit(NULL, INIT_WINDOW_ERROR);
 	return (window);
 }
 
@@ -27,15 +25,10 @@ t_image	create_image(t_fractal *fractal)
 {
 	t_image	image;
 
-	if (!fractal)
-		fail_exit(fractal, INIT_WINDOW_ERROR);
 	image.img = mlx_new_image(fractal->window.mlx,
 			WIN_WIDTH, WIN_HEIGHT);
-	image.addr = mlx_get_data_addr(image.img,
-			&image.bits_per_pixel, &image.line_length,
-			&image.endian);
-	if (!image.img || !image.addr)
-		fail_exit(fractal, INIT_IMAGE_ERROR);
+	image.addr = mlx_get_data_addr(image.img, &image.bits_per_pixel,
+			&image.line_length, &image.endian);
 	return (image);
 }
 

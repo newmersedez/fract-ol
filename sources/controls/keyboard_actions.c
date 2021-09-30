@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   keyboard_actions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 17:54:21 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 15:07:26 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 15:45:56 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	keyboard_julia_motion(t_fractal *fractal)
 
 void	keyboard_less_iterations(t_fractal *fractal)
 {
-	printf("less operations\n");
 	if (fractal->max_iteration - ITERATIONS_CHANGE >= ITERATIONS_MIN)
 	{
 		fractal->max_iteration -= ITERATIONS_CHANGE;
@@ -33,7 +32,6 @@ void	keyboard_less_iterations(t_fractal *fractal)
 
 void	keyboard_more_iterations(t_fractal *fractal)
 {
-	printf("more operations\n");
 	if (fractal->max_iteration + ITERATIONS_CHANGE <= ITERATIONS_MAX)
 	{
 		fractal->max_iteration += ITERATIONS_CHANGE;
@@ -46,18 +44,17 @@ void	keyboard_change_colorset(int keycode, t_fractal *fractal)
 {
 	if (keycode == KEY_ONE)
 	{
-		printf("");
 		fractal->colorset = COLORSET_GALACTIC;
 		draw_fractal(fractal);
 	}
 	else if (keycode == KEY_TWO)
 	{
-		fractal->colorset = COLORSET_GREEN;
+		fractal->colorset = COLORSET_RED;
 		draw_fractal(fractal);
 	}
 	else if (keycode == KEY_THREE)
 	{
-		fractal->colorset = COLORSET_RED;
+		fractal->colorset = COLORSET_PSYCHO;
 		draw_fractal(fractal);
 	}
 }

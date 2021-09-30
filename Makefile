@@ -6,7 +6,7 @@
 #    By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 16:52:01 by lorphan           #+#    #+#              #
-#    Updated: 2021/09/30 14:53:02 by lorphan          ###   ########.fr        #
+#    Updated: 2021/09/30 16:49:51 by lorphan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,5 +46,7 @@ clean:
 fclean:				clean
 					$(RM) $(NAME)
 					make fclean -C $(LIBFT_DIR)
+
+bonus:				all
 
 re:					fclean all

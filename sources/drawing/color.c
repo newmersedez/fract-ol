@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:20:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 15:16:48 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 15:35:33 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,6 @@ static int	set_colorset_galactic(int iteration, int max_iteration)
 	return (((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF));
 }
 
-static int	set_colorset_green(int iteration, int max_iteration)
-{
-	int		red;
-	int		green;
-	int		blue;
-
-	if (iteration >= max_iteration)
-	{
-		red = 20;
-		green = 0;
-		blue = 80;
-	}
-	else
-	{
-		red = (iteration * 128) % 255;
-		green = (iteration * 255) % 255;
-		blue = (iteration * 64) % 255;
-	}
-	return (((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF));
-}
-
 static int	set_colorset_red(int iteration, int max_iteration)
 {
 	int		red;
@@ -77,6 +56,27 @@ static int	set_colorset_red(int iteration, int max_iteration)
 	return (((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF));
 }
 
+static int	set_colorset_psycho(int iteration, int max_iteration)
+{
+	int		red;
+	int		green;
+	int		blue;
+
+	if (iteration >= max_iteration)
+	{
+		red = 20;
+		green = 0;
+		blue = 80;
+	}
+	else
+	{
+		red = (iteration * 128) % 255;
+		green = (iteration * 255) % 255;
+		blue = (iteration * 64) % 255;
+	}
+	return (((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF));
+}
+
 int	get_color(t_fractal *fractal, int iteration, int max_iteration)
 {
 	int	color;
@@ -84,9 +84,9 @@ int	get_color(t_fractal *fractal, int iteration, int max_iteration)
 	color = 0;
 	if (fractal->colorset == COLORSET_GALACTIC)
 		color = set_colorset_galactic(iteration, max_iteration);
-	else if (fractal->colorset == COLORSET_GREEN)
-		color = set_colorset_green(iteration, max_iteration);
 	else if (fractal->colorset == COLORSET_RED)
 		color = set_colorset_red(iteration, max_iteration);
+	else if (fractal->colorset == COLORSET_PSYCHO)
+		color = set_colorset_psycho(iteration, max_iteration);
 	return (color);
 }
