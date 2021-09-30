@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 13:35:46 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 15:01:16 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 /* Window defaults */
 
-# define WIN_WIDTH			1024
-# define WIN_HEIGHT 		1024
+# define WIN_WIDTH			1280
+# define WIN_HEIGHT 		1280
 # define OFFSET				60
 # define WIN_NAME			"fract-ol"
 # define OFF				0	

@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 17:54:21 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 20:12:49 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 15:07:26 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	keyboard_change_colorset(int keycode, t_fractal *fractal)
 {
 	if (keycode == KEY_ONE)
 	{
+		printf("");
 		fractal->colorset = COLORSET_GALACTIC;
 		draw_fractal(fractal);
 	}

@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:20:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 13:43:16 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 15:16:48 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ static int	set_colorset_green(int iteration, int max_iteration)
 	if (iteration >= max_iteration)
 	{
 		red = 20;
-		green = 30;
-		blue = 30;
+		green = 0;
+		blue = 80;
 	}
 	else
 	{
-		red = (iteration * 6) % 255;
-		green = (iteration * 10) % 255;
-		blue = (iteration * 12) % 255;
+		red = (iteration * 128) % 255;
+		green = (iteration * 255) % 255;
+		blue = (iteration * 64) % 255;
 	}
 	return (((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF));
 }
@@ -71,7 +71,7 @@ static int	set_colorset_red(int iteration, int max_iteration)
 	else
 	{
 		red = (iteration * 12) % 255;
-		green = (iteration * 2) % 255;
+		green = (iteration * 0) % 255;
 		blue = (iteration * 6) % 255;
 	}
 	return (((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF));
