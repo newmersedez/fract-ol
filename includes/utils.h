@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:22:51 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 15:32:51 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 17:38:34 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ int			get_color(t_fractal *fractal, int iteration, int max_iteration);
 void		julia(t_fractal *fractal);
 void		mandelbrot(t_fractal *fractal);
 void		burning_ship(t_fractal *fractal);
+void		tricorn(t_fractal *fractal);
 
 #endif

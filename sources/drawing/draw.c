@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:24:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 14:48:43 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 17:38:48 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	display_application_tips(void)
 	ft_putendl_fd("Available fractal sets:", 1);
 	ft_putendl_fd("1) Mandelbrot", 1);
 	ft_putendl_fd("2) Julia", 1);
-	ft_putendl_fd("3) Burning_ship\n", 1);
+	ft_putendl_fd("3) Burning_ship", 1);
+	ft_putendl_fd("4) Tricorn\n", 1);
 }
 
 void	display_control_tips(t_fractal *fractal)
@@ -55,6 +56,8 @@ int	draw_fractal(t_fractal *fractal)
 		julia(fractal);
 	else if (fractal->fractal_type == BURNING_SHIP)
 		burning_ship(fractal);
+	else if (fractal->fractal_type == TRICORN)
+		tricorn(fractal);
 	mlx_put_image_to_window(fractal->window.mlx, fractal->window.win,
 		fractal->image.img, 0, 0);
 	display_control_tips(fractal);

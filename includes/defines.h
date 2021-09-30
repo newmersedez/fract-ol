@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:50:47 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 17:22:51 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 17:35:59 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define MANDELBROT			0
 # define JULIA				1
 # define BURNING_SHIP		2
+# define TRICORN			3
 
 /* Colors */
 

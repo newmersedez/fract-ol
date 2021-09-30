@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 20:17:22 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 16:41:15 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 17:39:22 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	init_application_from_args(t_fractal *fractal, int argc, char *argv[])
 		fractal->fractal_type = JULIA;
 	else if (!ft_strcmp(argv[1], "Burning_ship"))
 		fractal->fractal_type = BURNING_SHIP;
+	else if (!ft_strcmp(argv[1], "Tricorn"))
+		fractal->fractal_type = TRICORN;
 	else
 	{
 		display_application_tips();

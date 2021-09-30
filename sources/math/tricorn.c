@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot_set.c                                   :+:      :+:    :+:   */
+/*   tricorn.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/21 16:43:42 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 17:27:43 by lorphan          ###   ########.fr       */
+/*   Created: 2021/09/30 17:35:29 by lorphan           #+#    #+#             */
+/*   Updated: 2021/09/30 17:38:21 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-static int	iterate_mandelbrot(t_fractal *fractal)
+static int	iterate_tricorn(t_fractal *fractal)
 {
 	t_complex	z;
 	double		temp;
@@ -24,15 +24,15 @@ static int	iterate_mandelbrot(t_fractal *fractal)
 	while (z.re * z.re + z.im * z.im <= 4.0
 		&& iteration <= fractal->max_iteration)
 	{
-		temp = z.re;
-		z.re = z.re * z.re - z.im * z.im + fractal->c.re;
-		z.im = 2.0 * temp * z.im + fractal->c.im;
+		temp = z.re * z.re - z.im * z.im + fractal->c.re;
+		z.im = -2.0 * z.re * z.im + fractal->c.im;
+		z.re = temp;
 		iteration++;
 	}
 	return (iteration);
 }
 
-static void	mandelbrot_part(t_fractal *fractal)
+static void	tricorn_part(t_fractal *fractal)
 {
 	int	x;
 	int	y;
@@ -47,7 +47,7 @@ static void	mandelbrot_part(t_fractal *fractal)
 		while (x < WIN_WIDTH)
 		{
 			fractal->c.re = fractal->min.re + x * fractal->factor.re;
-			iteration = iterate_mandelbrot(fractal);
+			iteration = iterate_tricorn(fractal);
 			color = get_color(fractal, iteration, fractal->max_iteration);
 			my_mlx_pixel_put(&fractal->image, x, y, color);
 			x++;
@@ -56,7 +56,7 @@ static void	mandelbrot_part(t_fractal *fractal)
 	}
 }
 
-void	mandelbrot(t_fractal *fractal)
+void	tricorn(t_fractal *fractal)
 {
 	int			i;
 	pthread_t	threads[THREADS];
@@ -71,7 +71,7 @@ void	mandelbrot(t_fractal *fractal)
 		fractals[i].min_pthread_bound = i * (WIN_HEIGHT / THREADS);
 		fractals[i].max_pthread_bound = (i + 1) * (WIN_HEIGHT / THREADS);
 		pthread_create(&threads[i], NULL,
-			(void *(*)(void *))mandelbrot_part, (void *)&fractals[i]);
+			(void *(*)(void *))tricorn_part, (void *)&fractals[i]);
 		i++;
 	}
 	while (i-- > 0)
