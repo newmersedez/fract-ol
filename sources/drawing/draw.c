@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_utils.c                                       :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:24:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 19:49:02 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 14:48:43 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@ void	my_mlx_pixel_put(t_image *data, int x, int y, int color)
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
+}
+
+void	display_application_tips(void)
+{
+	ft_putendl_fd("Correct format: ./fractol \"Fractal set\"", 1);
+	ft_putendl_fd("Available fractal sets:", 1);
+	ft_putendl_fd("1) Mandelbrot", 1);
+	ft_putendl_fd("2) Julia", 1);
+	ft_putendl_fd("3) Burning_ship\n", 1);
 }
 
 void	display_control_tips(t_fractal *fractal)
@@ -36,15 +45,6 @@ void	display_control_tips(t_fractal *fractal)
 		"Julia animation - CTRL");
 	mlx_string_put(fractal->window.mlx, fractal->window.win, 10, 170, WHITE,
 		"Color palletes - 1/2/3");
-}
-
-void	display_program_tips(void)
-{
-	ft_putendl_fd("Correct format: ./fractol \"Fractal set\"\n", 1);
-	ft_putendl_fd("Available fractal sets:", 1);
-	ft_putendl_fd("1) Mandelbrot", 1);
-	ft_putendl_fd("2) Julia", 1);
-	ft_putendl_fd("3) Burning_ship", 1);
 }
 
 int	draw_fractal(t_fractal *fractal)

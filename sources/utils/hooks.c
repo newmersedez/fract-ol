@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:21:13 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 21:53:31 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 13:11:12 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int	close_hook(t_fractal *fractal)
 {
 	printf("exit with red cross\n");
-	mlx_destroy_image(fractal->window.mlx, fractal->image.img);
-	mlx_destroy_window(fractal->window.mlx, fractal->window.win);
-	exit(EXIT_SUCCESS);
+	success_exit(fractal);
 	return (0);
 }
 
@@ -64,9 +62,7 @@ int	keyboard_hook(int keycode, t_fractal *fractal)
 	else if (keycode == KEY_ESC)
 	{
 		printf("exit with esc\n");
-		mlx_destroy_image(fractal->window.mlx, fractal->image.img);
-		mlx_destroy_window(fractal->window.mlx, fractal->window.win);
-		exit(EXIT_SUCCESS);
+		success_exit(fractal);
 	}
 	return (0);
 }

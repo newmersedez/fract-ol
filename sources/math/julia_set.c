@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 15:17:50 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 21:53:31 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 13:40:24 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	julia_part(t_fractal *fractal)
 		{
 			iteration = iterate_julia(fractal, x, y);
 			color = get_color(fractal, iteration, fractal->max_iteration);
-			my_mlx_pixel_put(&fractal->image, x, y, color);
+			my_mlx_pixel_put(&fractal->image, x, WIN_HEIGHT - y - 1, color);
 			x++;
 		}
 		y++;

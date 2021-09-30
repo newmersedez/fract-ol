@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   errors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 17:15:06 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/30 13:36:40 by lorphan          ###   ########.fr       */
+/*   Created: 2021/09/30 12:59:54 by lorphan           #+#    #+#             */
+/*   Updated: 2021/09/30 14:21:36 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef ERRORS_H
+# define ERRORS_H
 
-# include <mlx.h>
-# include <math.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <pthread.h>
+# define ARGUMENTS_ERROR "[ERROR]: Incorrect given arguments"
+# define INIT_WINDOW_ERROR "[ERROR]: Failed to create window"
+# define INIT_IMAGE_ERROR "[ERROR]: Failed to create image"
 
-# include "keycodes.h"
-# include "defines.h"
-# include "complex.h"
-# include "errors.h"
-# include "utils.h"
-# include "../libft/libft.h"
 #endif

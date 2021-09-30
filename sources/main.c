@@ -6,7 +6,7 @@
 /*   By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:13:48 by lorphan           #+#    #+#             */
-/*   Updated: 2021/09/29 20:13:34 by lorphan          ###   ########.fr       */
+/*   Updated: 2021/09/30 14:26:31 by lorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,9 @@ int	main(int argc, char *argv[])
 {
 	t_fractal	fractal;
 
-	if (argc != 2)
-	{
-		display_program_tips();
-		exit(EXIT_FAILURE);
-	}
-	if (!ft_strcmp(argv[1], "Mandelbrot"))
-		fractal.fractal_type = MANDELBROT;
-	else if (!ft_strcmp(argv[1], "Julia"))
-		fractal.fractal_type = JULIA;
-	else if (!ft_strcmp(argv[1], "Burning_ship"))
-		fractal.fractal_type = BURNING_SHIP;
-	else
-	{
-		display_program_tips();
-		exit(EXIT_FAILURE);
-	}
+	init_application_from_args(&fractal, argc, argv);
 	fractal.window = create_window(WIN_WIDTH, WIN_HEIGHT, WIN_NAME);
-	fractal.image = create_image(fractal.window);
+	fractal.image = create_image(&fractal);
 	set_defaults(&fractal);
 	draw_fractal(&fractal);
 	mlx_hook(fractal.window.win, 6, 6, mouse_motion_hook, &fractal);
@@ -41,5 +26,6 @@ int	main(int argc, char *argv[])
 	mlx_hook(fractal.window.win, 2, 5, keyboard_hook, &fractal);
 	mlx_hook(fractal.window.win, 17, 0, close_hook, &fractal);
 	mlx_loop(fractal.window.mlx);
+	success_exit(&fractal);
 	return (0);
 }
