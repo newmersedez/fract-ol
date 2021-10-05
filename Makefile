@@ -6,7 +6,7 @@
 #    By: lorphan <lorphan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 16:52:01 by lorphan           #+#    #+#              #
-#    Updated: 2021/10/04 22:21:25 by lorphan          ###   ########.fr        #
+#    Updated: 2021/10/05 15:19:57 by lorphan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			= fractol
 LIBFT			= ./libft/libft.h
 
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS			= -Wall -Wextra -Werror
 RM				= rm -rf
 
 INCLUDES_DIR	= ./includes/
